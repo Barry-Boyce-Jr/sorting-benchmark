@@ -1,6 +1,9 @@
 # Barry Boyce Jr
+# 8/29/2026
+# project0
+# counter.py
 
-
+#counter helper functions for all comparison operations
 class Counter:
     def __init__(self):
         self.count = 0
