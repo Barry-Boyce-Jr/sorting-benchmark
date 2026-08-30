@@ -5,10 +5,12 @@
 
 from counter import Counter
 
+# merges sorted lists
 def merge(left, right, counter):
     result = []
     i = 0
     j = 0
+
 
     while i < len(left) and j < len(right):
         if counter.less_eq (left[i], right[j]):
@@ -27,6 +29,30 @@ def merge(left, right, counter):
         result.append(right[j])
         j += 1
 
+    return result
 
+# splits and sorts
+def merge_sort(input, counter):
+    left = []
+    right = []
+    
+    if len(input) <= 1:
+        return input
+
+    mid = len(input) // 2
+
+    for i in range(0, mid):
+        left.append(input[i])
+
+    for i in range(mid, len(input)):
+        right.append(input[i])
+
+    # recursion on sorted lists
+    l_sorted = merge_sort(left, counter)
+    r_sorted = merge_sort(right, counter)
+
+    # once sorted merge lists
+    return merge(l_sorted, r_sorted, counter)
+        
 
 
