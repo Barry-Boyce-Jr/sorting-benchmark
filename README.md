@@ -46,10 +46,10 @@ COMPARISON COUNT ANALYSIS (Tables)
     | n      | Theoretical (worst case): n·log₂(n) − n + 1 |    Actual    |
     |--------|---------------------------------------------|---------------
     | 100    | 565.4                                       | 542          | 
-    | 1,000  | 9,866                                       | 8,703        |
-    | 2,500  | 27,371                                      | 25,143       |
-    | 5,000  | 60,141                                      | 55,197       |
-    | 10,000 | 129,878                                     | 120,358      |
+    | 1,000  | 8,967                                       | 8,703        |
+    | 2,500  | 25,720                                      | 25,143       |
+    | 5,000  | 56,440                                      | 55,197       |
+    | 10,000 | 122,878                                     | 120,358      |
 
     From Table 1 and Table 3 we can see that as n increases in size, the number of computations done by the selection sort
     increases significantly more than the number of computations done by the merge sort. This matches the theoretical formulas of both.
@@ -120,3 +120,9 @@ PEAK MEMORY FOOTPRINT ANALYSIS
 
     Table 9 and Table 10 both clearly show that both algorithms handle memory allocation differently as n grows in size.
     As shown in Table 9, the selection sort remains 0B no matter then size or the type of array (with the exception being the sorted array with n = 100 which has a peak of 32B. This however, is an outlier and is most possibly from some weird behavior with being the first ran test after tracemalloc is started). This shows that the Selection Sort maintain a flat O(1) auxiliary memory footprint as the selection sort does all the work inside the one array. However, the merge sort shows that the Peak Resident Memory increases as the n increases. Table 10 shows that when n is 100 the peak resident memory across all input types is 2,880B in merge sort. However, this grows to be 25,888B at n=1000, 128,584B at n = 5000, and between 253,888B-254,056B when n = 10000. This shows that Merge Sort exhibits an O(n) linear memory growth due to its auxiliary allocation buffers. This is because unlike the selection sort, merge sort does not do all the work inside the one array. Merge sort has to make multiple temporary arrays in order to split and then re-merge all the arrays it does while sorting. 
+
+GIT WORKFLOW REFLECTION
+    Throughout the completion of this assignment I would make sure to commit and push to a github repo whenever I would either
+    have longer work sessions or would complete an important step in the assignment. Using version control made me stay more organized as I did 
+    not want to constantly switch between working on different files as my commits would be harder to clearly track. I also did find it useful when
+    I wanted to go back and check an old version of bench_results.csv. 
