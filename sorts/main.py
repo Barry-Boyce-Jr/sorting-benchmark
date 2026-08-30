@@ -1,4 +1,6 @@
 # Barry Boyce Jr
+# CPSC 447
+# Fall 2026
 # 8/30/2026
 # project0
 # main.py
